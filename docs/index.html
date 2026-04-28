@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钓鱼链接检测工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ 钓鱼链接检测工具</h1>
+            <p class="subtitle">输入可疑链接，智能分析风险等级</p>
+        </header>
 
+        <main>
+            <div class="search-box">
+                <input type="text" id="urlInput" placeholder="请输入网址或链接..." autocomplete="off">
+                <button id="scanBtn">检测</button>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>正在分析链接...</p>
+            </div>
+
+            <div id="results" class="results hidden">
+                <div class="result-header">
+                    <span id="riskBadge" class="risk-badge"></span>
+                    <span id="riskLevel" class="risk-level"></span>
+                </div>
+
+                <div class="score-section">
+                    <div class="score-circle" id="scoreCircle">
+                        <span id="scoreValue">0</span>
+                    </div>
+                    <p class="score-label">风险评分</p>
+                    <p class="score-max">满分 100</p>
+                </div>
+
+                <div id="warningMessage" class="warning-message hidden"></div>
+
+                <div class="details-section">
+                    <h3>📋 URL 解析结果</h3>
+                    <div id="urlDetails" class="details-grid"></div>
+                </div>
+
+                <div class="details-section">
+                    <h3>🔍 检测详情</h3>
+                    <div id="checkDetails" class="check-list"></div>
+                </div>
+
+                <div id="recommendation" class="recommendation hidden"></div>
+            </div>
+
+            <div id="history" class="history-section">
+                <h3>📜 检测历史</h3>
+                <div id="historyList" class="history-list"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>⚠️ 本工具仅供参考，请保持警惕，谨慎点击可疑链接</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
